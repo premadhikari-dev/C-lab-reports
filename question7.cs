@@ -1,14 +1,27 @@
-using System;
+﻿using System;
 
-class question7
+namespace premlab2
 {
-    static void Main()
+    class question7
     {
-        Console.Write("Enter temperature in Celsius: ");
-        double c = double.Parse(Console.ReadLine());
+        static void Main()
+        {
+            Console.Write("Enter number: ");
+            int n = int.Parse(Console.ReadLine());
+            int sum = 0;
 
-        double f = (c * 9 / 5) + 32;
+            for (int i = 1; i < n; i++)
+            {
+                if (n % i == 0)
+                    sum += i;
+            }
 
-        Console.WriteLine("Fahrenheit = " + f);
+            if (sum == n)
+                Console.WriteLine("Perfect Number");
+            else
+                Console.WriteLine("Not Perfect");
+
+            Console.ReadKey();
+        }
     }
 }

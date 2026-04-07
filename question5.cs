@@ -1,18 +1,33 @@
-using System;
+﻿using System;
 
-class question5
+namespace premlab2
 {
-    static void Main()
+    class question5
     {
-        Console.Write("Enter 3 numbers: ");
-        int a = int.Parse(Console.ReadLine());
-        int b = int.Parse(Console.ReadLine());
-        int c = int.Parse(Console.ReadLine());
+        static void Main()
+        {
+            Console.Write("Enter number: ");
+            int n = int.Parse(Console.ReadLine());
+            bool isPrime = true;
 
-        int largest = (a > b) ? (a > c ? a : c) : (b > c ? b : c);
-        int smallest = (a < b) ? (a < c ? a : c) : (b < c ? b : c);
+            if (n <= 1)
+                isPrime = false;
 
-        Console.WriteLine("Largest = " + largest);
-        Console.WriteLine("Smallest = " + smallest);
+            for (int i = 2; i <= n / 2; i++)
+            {
+                if (n % i == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime)
+                Console.WriteLine("Prime");
+            else
+                Console.WriteLine("Not Prime");
+
+            Console.ReadKey();
+        }
     }
 }

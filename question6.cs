@@ -1,19 +1,28 @@
-using System;
+﻿using System;
 
-class question6
+namespace premlab2
 {
-    static void Main()
+    class question6
     {
-        Console.Write("Enter first number: ");
-        int a = int.Parse(Console.ReadLine());
+        static void Main()
+        {
+            Console.Write("Enter number: ");
+            int n = int.Parse(Console.ReadLine());
+            int original = n, sum = 0;
 
-        Console.Write("Enter second number: ");
-        int b = int.Parse(Console.ReadLine());
+            while (n > 0)
+            {
+                int digit = n % 10;
+                sum += digit * digit * digit;
+                n /= 10;
+            }
 
-        Console.WriteLine("AND: " + (a & b));
-        Console.WriteLine("OR: " + (a | b));
-        Console.WriteLine("XOR: " + (a ^ b));
-        Console.WriteLine("Left Shift: " + (a << 1));
-        Console.WriteLine("Right Shift: " + (a >> 1));
+            if (sum == original)
+                Console.WriteLine("Armstrong");
+            else
+                Console.WriteLine("Not Armstrong");
+
+            Console.ReadKey();
+        }
     }
 }

@@ -1,15 +1,22 @@
-using System;
+﻿using System;
 
-class question2
+namespace premlab2
 {
-    static void Main(string[] args)
+    class Program2
     {
-        int a = int.Parse(args[0]);
-        int b = int.Parse(args[1]);
+        public static void Main()
+        {
+            Console.Write("Enter number: ");
+            int n = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Addition: " + (a + b));
-        Console.WriteLine("Subtraction: " + (a - b));
-        Console.WriteLine("Multiplication: " + (a * b));
-        Console.WriteLine("Division: " + (a / b));
+            if (n > 0)
+                Console.WriteLine("Positive");
+            else if (n < 0)
+                Console.WriteLine("Negative");
+            else
+                Console.WriteLine("Zero");
+
+            Console.ReadKey();
+        }
     }
 }

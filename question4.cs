@@ -1,15 +1,30 @@
-using System;
+﻿using System;
 
-class question4
+namespace premlab2
 {
-    static void Main()
+    class question4
     {
-        int a = 5, b = 10;
+        static void Main()
+        {
+            Console.Write("Enter digit (0-9): ");
+            int n = int.Parse(Console.ReadLine());
 
-        a = a + b;
-        b = a - b;
-        a = a - b;
+            switch (n)
+            {
+                case 0: Console.WriteLine("Zero"); break;
+                case 1: Console.WriteLine("One"); break;
+                case 2: Console.WriteLine("Two"); break;
+                case 3: Console.WriteLine("Three"); break;
+                case 4: Console.WriteLine("Four"); break;
+                case 5: Console.WriteLine("Five"); break;
+                case 6: Console.WriteLine("Six"); break;
+                case 7: Console.WriteLine("Seven"); break;
+                case 8: Console.WriteLine("Eight"); break;
+                case 9: Console.WriteLine("Nine"); break;
+                default: Console.WriteLine("Invalid"); break;
+            }
 
-        Console.WriteLine("a=" + a + " b=" + b);
+            Console.ReadKey();
+        }
     }
 }

@@ -1,20 +1,26 @@
-using System;
+﻿using System;
 
-class question8
+namespace premlab2
 {
-    static void Main()
+    class question8
     {
-        Console.Write("Enter Principal: ");
-        double p = double.Parse(Console.ReadLine());
+        static void Main()
+        {
+            Console.Write("Enter n: ");
+            int n = int.Parse(Console.ReadLine());
 
-        Console.Write("Enter Rate: ");
-        double r = double.Parse(Console.ReadLine());
+            int a = 0, b = 1, c = 0;
 
-        Console.Write("Enter Time: ");
-        double t = double.Parse(Console.ReadLine());
+            for (int i = 2; i <= n; i++)
+            {
+                c = a + b;
+                a = b;
+                b = c;
+            }
 
-        double si = (p * r * t) / 100;
+            Console.WriteLine("Nth term = " + (n == 0 ? a : b));
 
-        Console.WriteLine("Simple Interest = " + si);
+            Console.ReadKey();
+        }
     }
 }

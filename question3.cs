@@ -1,16 +1,38 @@
-using System;
+﻿using System;
 
-class question3
+namespace premlab2
 {
-    static void Main()
+    class Question3
     {
-        Console.Write("Enter length: ");
-        int l = int.Parse(Console.ReadLine());
+        public static void Main()
+        {
+            Console.Write("Enter first number: ");
+            int a = int.Parse(Console.ReadLine());
 
-        Console.Write("Enter breadth: ");
-        int b = int.Parse(Console.ReadLine());
+            Console.Write("Enter second number: ");
+            int b = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("Area = " + (l * b));
-        Console.WriteLine("Perimeter = " + (2 * (l + b)));
+            Console.Write("Enter third number: ");
+            int c = int.Parse(Console.ReadLine());
+
+            int largest;
+
+            if (a > b)
+            {
+                if (a > c)
+                    largest = a;
+                else
+                    largest = c;
+            }
+            else
+            {
+                if (b > c)
+                    largest = b;
+                else
+                    largest = c;
+            }
+
+            Console.WriteLine("Largest = " + largest);
+        }
     }
 }
