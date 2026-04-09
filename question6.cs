@@ -1,28 +1,27 @@
 ﻿using System;
 
-namespace premlab2
+namespace lab3prem
 {
     class question6
     {
-        static void Main()
+        static void ByValue(int x)
         {
-            Console.Write("Enter number: ");
-            int n = int.Parse(Console.ReadLine());
-            int original = n, sum = 0;
+            x = 100;
+        }
 
-            while (n > 0)
-            {
-                int digit = n % 10;
-                sum += digit * digit * digit;
-                n /= 10;
-            }
+        static void ByRef(ref int x)
+        {
+            x = 100;
+        }
 
-            if (sum == original)
-                Console.WriteLine("Armstrong");
-            else
-                Console.WriteLine("Not Armstrong");
+        public static void Main()
+        {
+            int a = 10;
+            ByValue(a);
+            Console.WriteLine("By Value: " + a);
 
-            Console.ReadKey();
+            ByRef(ref a);
+            Console.WriteLine("By Ref: " + a);
         }
     }
 }

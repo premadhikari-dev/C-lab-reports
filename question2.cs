@@ -1,22 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace premlab2
+namespace lab3prem
 {
-    class Program2
+    class question2
     {
         public static void Main()
         {
-            Console.Write("Enter number: ");
+            Console.Write("Enter size: ");
             int n = int.Parse(Console.ReadLine());
 
-            if (n > 0)
-                Console.WriteLine("Positive");
-            else if (n < 0)
-                Console.WriteLine("Negative");
-            else
-                Console.WriteLine("Zero");
+            int[] arr = new int[n];
 
-            Console.ReadKey();
+            for (int i = 0; i < n; i++)
+                arr[i] = int.Parse(Console.ReadLine());
+
+            int min = arr[0], max = arr[0];
+
+            for (int i = 1; i < n; i++)
+            {
+                if (arr[i] < min) min = arr[i];
+                if (arr[i] > max) max = arr[i];
+            }
+
+            Console.WriteLine("Min = " + min);
+            Console.WriteLine("Max = " + max);
         }
     }
 }

@@ -1,26 +1,20 @@
 ﻿using System;
 
-namespace premlab2
+namespace lab3prem
 {
     class question8
     {
-        static void Main()
+        static int Sum(params int[] nums)
         {
-            Console.Write("Enter n: ");
-            int n = int.Parse(Console.ReadLine());
+            int s = 0;
+            foreach (int n in nums)
+                s += n;
+            return s;
+        }
 
-            int a = 0, b = 1, c = 0;
-
-            for (int i = 2; i <= n; i++)
-            {
-                c = a + b;
-                a = b;
-                b = c;
-            }
-
-            Console.WriteLine("Nth term = " + (n == 0 ? a : b));
-
-            Console.ReadKey();
+        public static void Main()
+        {
+            Console.WriteLine(Sum(1, 2, 3, 4));
         }
     }
 }

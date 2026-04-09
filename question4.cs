@@ -1,30 +1,40 @@
 ﻿using System;
 
-namespace premlab2
+namespace lab3prem
 {
     class question4
     {
-        static void Main()
+        public static void Main()
         {
-            Console.Write("Enter digit (0-9): ");
-            int n = int.Parse(Console.ReadLine());
+            int[,] A = new int[3, 3];
+            int[,] B = new int[3, 3];
+            int[,] C = new int[3, 3];
 
-            switch (n)
+            Console.WriteLine("Enter Matrix A:");
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++)
+                    A[i, j] = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter Matrix B:");
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++)
+                    B[i, j] = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++)
+                {
+                    C[i, j] = 0;
+                    for (int k = 0; k < 3; k++)
+                        C[i, j] += A[i, k] * B[k, j];
+                }
+
+            Console.WriteLine("Result:");
+            for (int i = 0; i < 3; i++)
             {
-                case 0: Console.WriteLine("Zero"); break;
-                case 1: Console.WriteLine("One"); break;
-                case 2: Console.WriteLine("Two"); break;
-                case 3: Console.WriteLine("Three"); break;
-                case 4: Console.WriteLine("Four"); break;
-                case 5: Console.WriteLine("Five"); break;
-                case 6: Console.WriteLine("Six"); break;
-                case 7: Console.WriteLine("Seven"); break;
-                case 8: Console.WriteLine("Eight"); break;
-                case 9: Console.WriteLine("Nine"); break;
-                default: Console.WriteLine("Invalid"); break;
+                for (int j = 0; j < 3; j++)
+                    Console.Write(C[i, j] + " ");
+                Console.WriteLine();
             }
-
-            Console.ReadKey();
         }
     }
 }

@@ -1,27 +1,18 @@
 ﻿using System;
 
-namespace premlab2
+namespace lab3prem
 {
     class question7
     {
-        static void Main()
+        static void Show(string name = "Prem", int age = 20)
         {
-            Console.Write("Enter number: ");
-            int n = int.Parse(Console.ReadLine());
-            int sum = 0;
+            Console.WriteLine(name + " " + age);
+        }
 
-            for (int i = 1; i < n; i++)
-            {
-                if (n % i == 0)
-                    sum += i;
-            }
-
-            if (sum == n)
-                Console.WriteLine("Perfect Number");
-            else
-                Console.WriteLine("Not Perfect");
-
-            Console.ReadKey();
+        public static void Main()
+        {
+            Show();
+            Show(age: 25, name: "Ram");
         }
     }
 }

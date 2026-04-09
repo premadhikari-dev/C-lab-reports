@@ -1,38 +1,24 @@
 ﻿using System;
 
-namespace premlab2
+namespace lab3prem
 {
-    class Question3
+    class question3
     {
         public static void Main()
         {
-            Console.Write("Enter first number: ");
-            int a = int.Parse(Console.ReadLine());
+            int[,] m = new int[3, 3];
+            int sum = 0;
 
-            Console.Write("Enter second number: ");
-            int b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter 3x3 matrix:");
 
-            Console.Write("Enter third number: ");
-            int c = int.Parse(Console.ReadLine());
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++)
+                    m[i, j] = int.Parse(Console.ReadLine());
 
-            int largest;
+            for (int i = 0; i < 3; i++)
+                sum += m[i, i];
 
-            if (a > b)
-            {
-                if (a > c)
-                    largest = a;
-                else
-                    largest = c;
-            }
-            else
-            {
-                if (b > c)
-                    largest = b;
-                else
-                    largest = c;
-            }
-
-            Console.WriteLine("Largest = " + largest);
+            Console.WriteLine("Diagonal Sum = " + sum);
         }
     }
 }

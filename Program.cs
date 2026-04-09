@@ -1,20 +1,25 @@
 ﻿using System;
 
-namespace premlab2
+namespace lab3prem
 {
     class Program
     {
-        static void Main()
+        public static void Main()
         {
-            Console.Write("Enter number: ");
+            Console.Write("Enter size: ");
             int n = int.Parse(Console.ReadLine());
 
-            if (n % 2 == 0)
-                Console.WriteLine("Even");
-            else
-                Console.WriteLine("Odd");
+            int sum = 0;
+            int[] arr = new int[n];
 
-            Console.ReadKey();
+            for (int i = 0; i < n; i++)
+            {
+                arr[i] = int.Parse(Console.ReadLine());
+                if (arr[i] % 2 != 0)
+                    sum += arr[i];
+            }
+
+            Console.WriteLine("Sum of odd elements = " + sum);
         }
     }
 }

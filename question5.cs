@@ -1,33 +1,22 @@
 ﻿using System;
 
-namespace premlab2
+namespace lab3prem
 {
     class question5
     {
-        static void Main()
+        public static void Main()
         {
-            Console.Write("Enter number: ");
-            int n = int.Parse(Console.ReadLine());
-            bool isPrime = true;
+            int[][] arr = new int[3][];
+            arr[0] = new int[] { 1, 2 };
+            arr[1] = new int[] { 3, 4, 5 };
+            arr[2] = new int[] { 6 };
 
-            if (n <= 1)
-                isPrime = false;
-
-            for (int i = 2; i <= n / 2; i++)
+            foreach (var row in arr)
             {
-                if (n % i == 0)
-                {
-                    isPrime = false;
-                    break;
-                }
+                foreach (var val in row)
+                    Console.Write(val + " ");
+                Console.WriteLine();
             }
-
-            if (isPrime)
-                Console.WriteLine("Prime");
-            else
-                Console.WriteLine("Not Prime");
-
-            Console.ReadKey();
         }
     }
 }

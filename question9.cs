@@ -1,27 +1,31 @@
 ﻿using System;
 
-namespace premlab2
+namespace lab3prem
 {
     class question9
     {
-        static void Main()
+        static bool IsPrime(int n)
         {
-            int sum = 0;
+            if (n < 2) return false;
+            for (int i = 2; i <= n / 2; i++)
+                if (n % i == 0) return false;
+            return true;
+        }
 
-            while (true)
-            {
-                Console.Write("Enter number: ");
-                int n = int.Parse(Console.ReadLine());
+        public static void Main()
+        {
+            Console.Write("Enter size: ");
+            int n = int.Parse(Console.ReadLine());
 
-                if (n < 0)
-                    break;
+            int[] arr = new int[n];
 
-                sum += n;
-            }
+            for (int i = 0; i < n; i++)
+                arr[i] = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Sum = " + sum);
-
-            Console.ReadKey();
+            Console.WriteLine("Prime elements:");
+            foreach (int x in arr)
+                if (IsPrime(x))
+                    Console.Write(x + " ");
         }
     }
 }
